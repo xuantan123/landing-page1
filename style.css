@@ -56,7 +56,6 @@ body {
 .ant-col {
     color: var(--white);
     margin-top: clamp(80px, 100%, 100px);
-    padding-left: inherit;
 }
 
 .ant-col-14 {
@@ -130,33 +129,33 @@ body {
 }
 /* --------------------------- */
 .box-container {
-    max-height: 320px; 
+    height: 600px; 
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .image-ellipse {
-    height: 100%; 
-    width: auto; 
+    height: 60%; 
+    width: 10%; 
     position: absolute;
     top: 50%; 
-    transform: translate(0, -50%); 
+    transform: translate(0, -50%);
 }
 
 .box-voucher {
     display: flex;
     justify-content: center;
     background-color: #000000;
-    padding: 2% 8%; 
-    gap: 5%;
-    flex-wrap: wrap; 
+    padding: 3% 10%; /* Adjusted padding for more spacing */
+    gap: 6%;
+    flex-wrap: wrap;
 }
 
 .box {
-    flex: 1 1 calc(33% - 5%); 
+    flex: 1 1 calc(33% - 5%);
     max-width: 390px;
     aspect-ratio: 390 / 150;
-    padding: 1%; 
+    padding: 1%; /* Adjusted padding for more content spacing */
     text-align: center;
     position: relative;
     color: white;
@@ -165,6 +164,7 @@ body {
     background: url('./image/background-voucher.svg') no-repeat;
     background-size: contain;
 }
+
 .box-title {
     font-size: 25px; 
     margin-bottom: 10px;
@@ -431,17 +431,17 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #000; 
-    height: 24vh;
+    max-height: 800px;
     overflow: hidden; 
-    padding: 0;
+    padding-bottom: clamp(20px,100%,40px);
     margin: 0;
 }
 
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex-grow: 1; 
+    align-items: center; 
+    height: 100%;
 }
 .title {
     background: var(--gradient-colors);
