@@ -67,12 +67,12 @@ body {
 }
 
 .ant-col h1 {
-    font-size: 70px;
+    font-size: clamp(40px, 5vw, 70px);
 }
 
 .ant-col p {
     width: 80%;
-    font-size: 25px;
+    font-size: clamp(18px, 3vw, 25px);
 }
 
 .highlight {
@@ -129,7 +129,7 @@ body {
 }
 /* --------------------------- */
 .box-container {
-    height: 600px; 
+    height: 500px; 
     position: relative;
     overflow: hidden;
 }
@@ -146,16 +146,16 @@ body {
     display: flex;
     justify-content: center;
     background-color: #000000;
-    padding: 3% 10%; /* Adjusted padding for more spacing */
+    padding: 3% 10%; 
     gap: 6%;
     flex-wrap: wrap;
 }
 
 .box {
     flex: 1 1 calc(33% - 5%);
-    max-width: 390px;
+    max-width: clamp(250px, 30vw, 390px); /* Thay đổi chiều rộng tối thiểu và tối đa */
     aspect-ratio: 390 / 150;
-    padding: 1%; /* Adjusted padding for more content spacing */
+    padding: 1%; 
     text-align: center;
     position: relative;
     color: white;
@@ -165,14 +165,15 @@ body {
     background-size: contain;
 }
 
+
 .box-title {
-    font-size: 25px; 
+    font-size: clamp(18px, 3vw, 25px); 
     margin-bottom: 10px;
     text-align: left;
 }
 
 .box-value {
-    font-size: 50px; 
+    font-size: clamp(40px, 5vw, 50px); 
     font-weight: bold;
     background: var(--gradient-colors);
     -webkit-background-clip: text; 
@@ -182,6 +183,7 @@ body {
 .image-container {
     background-color: var(--background-color); 
     width: 100%; 
+    height: auto;
     padding: 0; 
     display: flex;
     justify-content: center; 
@@ -247,13 +249,13 @@ body {
     background-position: center;
   }
   .scroll-image {
-    max-width: 80%;
-    height: 65px;
-    width: 85px;
+    max-width: 25%;
+    height: auto;
+    width: auto;
     align-items: flex-start;
   }
   .scroll-title {
-    font-size: 30px;
+    font-size: clamp(10px, 5vw, 30px);
     margin-bottom: 10px;
     text-align: left;
   }
@@ -261,9 +263,10 @@ body {
     color: var(--white);
   }
   .scroll-content-text {
-    font-size: 20px;
+    font-size: clamp(5px, 4vw, 20px);
     color: var(--white); 
     text-align: left;
+    margin: 0;
   }
   /* ---------------------- */
   .stake-container {
@@ -291,7 +294,6 @@ body {
   }
   .stake-box {
     background-color: var(--background-color);
-    padding: 20px;
     max-width: 1183.82px;
     width: 100%;
     height: auto;
@@ -302,7 +304,6 @@ body {
   }
   .stake-box-2 {
     background-color: var(--background-color);
-    padding: 20px;
     max-width: 1183.82px;
     width: 100%;
     height: auto;
@@ -321,9 +322,9 @@ body {
   }
   
   .stake-image {
-    width: 150px;
-    height: 150px;
-    margin: 70px;
+    width: clamp(100px, 15vw, 150px); 
+    height: clamp(100px, 15vw, 150px); 
+    margin: clamp(20px, 5vw, 70px);
     object-fit: contain;
   }
   
@@ -333,12 +334,12 @@ body {
   
   .stake-text h1 {
     color: var(--white);
-    font-size: 40px;
+    font-size: clamp(15px,4vw,40px);
     margin-bottom: 10px;
   }
   
   .stake-text p {
-    font-size: 20px;
+    font-size: clamp(8px,2vw,20px);
     line-height: 1.5;
   }
   /* ---------------- */
@@ -361,66 +362,87 @@ body {
     ; 
   }
   .roadmap-header h1 {
-    font-size: 50px;
+    font-size: clamp(30px, 5vw, 50px); 
     color: var(--white);
     padding-top: 60px;
     margin-bottom: 0;
-  }
-  .roadmap-header p {
+}
+
+.roadmap-header p {
     color: var(--white);
-    font-size: 25px;
+    font-size: clamp(16px, 3vw, 25px); 
     padding-bottom: 10px;
-  }
+}
+
   /* ---------------- */
   .stage-box {
     background: var(--background-color); 
     width: 100%;
     display: flex; 
     justify-content: center; 
-    padding: 20px; 
+    padding: clamp(10px, 2vw, 20px); /* Sử dụng clamp cho padding */
     flex-wrap: wrap;
 }
 
 .stage-content {
     display: flex;
     flex-direction: column; 
-    background-color: var(--background-color);
-    padding: 20px;
+    background-color: transparent; 
+    padding: clamp(10px, 2vw, 20px); /* Sử dụng clamp cho padding */
     max-width: 1194px; 
-    width: 70%;
+    width: clamp(90%, 70vw, 70%); /* Điều chỉnh chiều rộng với clamp */
     aspect-ratio: calc(1194 / 210.33); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
     background: url('/landing-page1/image/stage-box.svg') no-repeat; 
-    background-size: contain; 
+    background-size: cover; 
     margin: 0;
     color: white; 
-    padding-left: 270px;
-    margin-bottom: 10px;
+    margin-bottom: clamp(10px, 1vw, 20px); /* Sử dụng clamp cho margin-bottom */
+    position: relative; 
 }
 
-.stage-content h1 {
+.stage-container {
+    padding-left: clamp(200px, 25vw, 300px); /* Sử dụng clamp cho padding-left */
+}
+
+.stage-container h1 {
     color: var(--white);
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: clamp(20px, 8vw, 40px); /* Điều chỉnh để phù hợp hơn với điện thoại */
+    margin-bottom: clamp(5px, 1vw, 10px); /* Sử dụng clamp cho margin-bottom */
 }
 
-.stage-content ul {
+.stage-container ul {
     list-style-type: disc; 
-    font-size: 25px; 
-    padding-left: 60px; 
     margin: 0; 
+    padding-left: clamp(50px, 2vw, 100px); /* Sử dụng clamp cho padding-left */
 }
 
-.stage-content li {
-    font-size: 25px; 
-    margin-bottom: 5px; 
+.stage-container li {
+    font-size: clamp(12px, 3vw, 25px); /* Sử dụng clamp cho kích thước chữ */
+    margin-bottom: clamp(5px, 0.5vw, 10px); /* Sử dụng clamp cho margin-bottom */
 }
-.rectangle{
+
+.rectangle {
     width: 100vw;
     display: block;
     position: relative;
     left: calc(-50vw + 50%);
     margin-top: 110px;
+}
+
+/* Media Queries cho điện thoại và tablet */
+@media (max-width: 768px) {
+    .stage-content {
+        width: 90%; /* Mở rộng chiều rộng cho màn nhỏ */
+    }
+
+    .stage-container h1 {
+        font-size: clamp(18px, 4vw, 30px); /* Điều chỉnh kích thước chữ */
+    }
+
+    .stage-container li {
+        font-size: clamp(10px, 2vw, 20px); /* Điều chỉnh kích thước chữ cho danh sách */
+    }
 }
 
 /* ----------------------- */
@@ -445,14 +467,14 @@ body {
     background: var(--gradient-colors);
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent; 
-    font-size: 68px;
+    font-size: clamp(40px, 8vw, 68px);
     font-family: 'Zen Dots',sans-serif;   
     margin-bottom: 5px ;
     }
     
 .tagline {
     color: white;
-    font-size: 30px;
+    font-size: clamp(20px, 5vw, 30px);
     padding: 0;
     display: flex;
     align-items: center;
